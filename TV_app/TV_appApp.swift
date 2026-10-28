@@ -9,9 +9,13 @@ import SwiftUI
 
 @main
 struct TV_appApp: App {
+    @State private var tv = TVState()
+
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environment(tv)
+                .task { await startServer(tv) }
         }
     }
 }

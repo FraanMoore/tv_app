@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		A17DE88630915035006ADF8E /* Hummingbird in Frameworks */ = {isa = PBXBuildFile; productRef = A17DE88530915035006ADF8E /* Hummingbird */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		A17DE85D30914576006ADF8E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -52,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A17DE88630915035006ADF8E /* Hummingbird in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +83,7 @@
 				A17DE85130914576006ADF8E /* TV_app */,
 				A17DE85F30914576006ADF8E /* TV_appTests */,
 				A17DE86930914576006ADF8E /* TV_appUITests */,
+				A17DE88430915035006ADF8E /* Frameworks */,
 				A17DE85030914576006ADF8E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -90,6 +96,13 @@
 				A17DE86630914576006ADF8E /* TV_appUITests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		A17DE88430915035006ADF8E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -112,6 +125,7 @@
 			);
 			name = TV_app;
 			packageProductDependencies = (
+				A17DE88530915035006ADF8E /* Hummingbird */,
 			);
 			productName = TV_app;
 			productReference = A17DE84F30914576006ADF8E /* TV_app.app */;
@@ -195,6 +209,9 @@
 			);
 			mainGroup = A17DE84630914576006ADF8E;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				A17DE87930914CC9006ADF8E /* XCRemoteSwiftPackageReference "hummingbird" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = A17DE85030914576006ADF8E /* Products */;
 			projectDirPath = "";
@@ -396,9 +413,20 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_APP_SANDBOX = YES;
+				ENABLE_INCOMING_NETWORK_CONNECTIONS = YES;
+				ENABLE_OUTGOING_NETWORK_CONNECTIONS = YES;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_RESOURCE_ACCESS_AUDIO_INPUT = NO;
+				ENABLE_RESOURCE_ACCESS_BLUETOOTH = NO;
+				ENABLE_RESOURCE_ACCESS_CALENDARS = NO;
+				ENABLE_RESOURCE_ACCESS_CAMERA = NO;
+				ENABLE_RESOURCE_ACCESS_CONTACTS = NO;
+				ENABLE_RESOURCE_ACCESS_LOCATION = NO;
+				ENABLE_RESOURCE_ACCESS_PRINTING = NO;
+				ENABLE_RESOURCE_ACCESS_USB = NO;
 				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -426,9 +454,20 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_APP_SANDBOX = YES;
+				ENABLE_INCOMING_NETWORK_CONNECTIONS = YES;
+				ENABLE_OUTGOING_NETWORK_CONNECTIONS = YES;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_RESOURCE_ACCESS_AUDIO_INPUT = NO;
+				ENABLE_RESOURCE_ACCESS_BLUETOOTH = NO;
+				ENABLE_RESOURCE_ACCESS_CALENDARS = NO;
+				ENABLE_RESOURCE_ACCESS_CAMERA = NO;
+				ENABLE_RESOURCE_ACCESS_CONTACTS = NO;
+				ENABLE_RESOURCE_ACCESS_LOCATION = NO;
+				ENABLE_RESOURCE_ACCESS_PRINTING = NO;
+				ENABLE_RESOURCE_ACCESS_USB = NO;
 				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -563,6 +602,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		A17DE87930914CC9006ADF8E /* XCRemoteSwiftPackageReference "hummingbird" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hummingbird-project/hummingbird";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.28.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A17DE88530915035006ADF8E /* Hummingbird */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A17DE87930914CC9006ADF8E /* XCRemoteSwiftPackageReference "hummingbird" */;
+			productName = Hummingbird;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = A17DE84730914576006ADF8E /* Project object */;
 }
