@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import AppKit
 import WebKit
 import Foundation
 
@@ -232,8 +233,15 @@ struct ContentView: View {
                 HomeView()
             }
         }
-        .onAppear { NSApp.windows.first?.toggleFullScreen(nil)
-            sleepManager.preventSleep()}
+        .onAppear {
+            sleepManager.preventSleep()
+            DispatchQueue.main.async {
+                if let window = NSApp.windows.first(where: { $0.canBecomeMain}),
+                   !window.styleMask.contains(.fullScreen){
+                    window.toggleFullScreen(nil)
+                }
+            }
+        }
         .onDisappear { sleepManager.alloswSleep() }
     }
 }
