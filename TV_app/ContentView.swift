@@ -7,6 +7,7 @@
 
 import SwiftUI
 import WebKit
+import Foundation
 
 struct StreamingApp: Identifiable {
     let id: String
@@ -168,6 +169,25 @@ class TVState {
     }
 }
 
+class SleepManager {
+    private var activity: NSObjectProtocol?
+    
+    func preventSleep() {
+        guard activity == nil else { return }
+        activity = ProcessInfo.processInfo.beginActivity(
+            options: [.userInitiated, .idleDisplaySleepDisabled],
+            reason: "Mac awake while TV_app is on"
+            )
+    }
+    
+    func alloswSleep() {
+        if let activity = activity {
+            ProcessInfo.processInfo.endActivity(activity)
+            self.activity = nil
+        }
+    }
+}
+
 struct HomeView: View {
     @Environment(TVState.self) private var tv
 
@@ -202,6 +222,7 @@ struct HomeView: View {
 
 struct ContentView: View {
     @Environment(TVState.self) private var tv
+    @State private var sleepManager = SleepManager()
 
     var body: some View {
         Group {
@@ -211,6 +232,8 @@ struct ContentView: View {
                 HomeView()
             }
         }
-        .onAppear { NSApp.windows.first?.toggleFullScreen(nil) }
+        .onAppear { NSApp.windows.first?.toggleFullScreen(nil)
+            sleepManager.preventSleep()}
+        .onDisappear { sleepManager.alloswSleep() }
     }
 }
